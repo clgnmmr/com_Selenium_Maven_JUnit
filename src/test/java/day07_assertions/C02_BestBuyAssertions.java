@@ -1,4 +1,4 @@
-package day06_radioButton_checkBox;
+package day07_assertions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -11,9 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.List;
 
-public class C05_BestBuyAssertions {
+public class C02_BestBuyAssertions {
 
     WebDriver driver;
 //1) Bir class oluşturun: BestBuyAssertions
@@ -30,32 +29,43 @@ public class C05_BestBuyAssertions {
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofDays(15));
+        //2) https://www.bestbuy.com/ Adresine gidin farkli test method’lari olusturarak asagidaki
+        driver.get("https://www.bestbuy.com/");
+        //testleri yapin
     }
 
     @Test
-    public void test()  {
-        //2) https://www.bestbuy.com/ Adresine gidin farkli test method’lari olusturarak asagidaki
-        driver.get("https://www.bestbuy.com/");
-       //testleri yapin
-
-       //○ Sayfa URL’inin https://www.bestbuy.com/ ‘a esit oldugunu test edin
+    public void test01()  {
+        //○ Sayfa URL’inin https://www.bestbuy.com/ ‘a esit oldugunu test edin
         String expectedUrl="https://www.bestbuy.com/";
         String actualUrl=driver.getCurrentUrl();
         Assert.assertEquals("Url beklenenden farkli",expectedUrl,actualUrl);
-      //○ titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
-        String expectedTitle ="Rest";
-        String actualTitle= driver.getTitle();
-        Assert.assertFalse("sayfa baslıgı expected iceriyor",actualTitle.contains(expectedTitle));
-      //○ logoTest => BestBuy logosunun görüntülendigini test edin
-        WebElement logoElement= driver.findElement(By.xpath("(//img[@class='logo'])[1]"));
-        Assert.assertTrue("bestbuy logosu gozukmuyor", logoElement.isDisplayed());
-      //○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
-        WebElement listElement=driver.findElement(By.xpath("//button[text()='Français']"));
-        Assert.assertTrue("Fransızca linki gözükmüyor",listElement.isDisplayed());
+
 
 
     }
 
+    @Test
+    public void test02()  {
+
+        //○ titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
+        String expectedTitle ="Rest";
+        String actualTitle= driver.getTitle();
+        Assert.assertFalse("sayfa baslıgı expected iceriyor",actualTitle.contains(expectedTitle));
+    }
+    @Test
+    public void test03()  {
+
+        //○ logoTest => BestBuy logosunun görüntülendigini test edin
+        WebElement logoElement= driver.findElement(By.xpath("(//img[@class='logo'])[1]"));
+        Assert.assertTrue("bestbuy logosu gozukmuyor", logoElement.isDisplayed());
+    }
+    @Test
+    public void test04()  {
+        //○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
+        WebElement listElement=driver.findElement(By.xpath("//button[text()='Français']"));
+        Assert.assertTrue("Fransızca linki gözükmüyor",listElement.isDisplayed());
+    }
 
 
 
