@@ -29,7 +29,7 @@ public class C04_Assertions {
 
     }
     @Test
-    public void test() throws InterruptedException {
+    public void test()  {
         /* Eger Test method'umuzda hicbir test yoksa, test calistiktan sonra
            hic bir problemle karsilasilmadigini raporlamak icin "tests passed" yazisi cikar
            Eger testleri if ile yaparsak
