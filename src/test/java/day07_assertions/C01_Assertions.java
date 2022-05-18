@@ -31,6 +31,7 @@ public class C01_Assertions {
           driver.manage().timeouts().implicitlyWait(Duration.ofDays(15));
           //amazon anasayfaya gidin https://www.amazon.com
           driver.navigate().to("https://www.amazon.com");
+
     }
     @AfterClass
     public static  void tearDown(){
