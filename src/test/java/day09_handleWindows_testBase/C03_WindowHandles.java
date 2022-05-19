@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 public class C03_WindowHandles {
     WebDriver driver;
@@ -64,8 +66,10 @@ public class C03_WindowHandles {
         ilk sayfanin handle degerine esit olmayan
         ikinci sayfanin woindow handle degeridir deriz
          */
+        List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
         Set<String> windowHandleseti= driver.getWindowHandles();
         System.out.println(windowHandleseti);
+        System.out.println(windowHandles);
         String ikinciSayfaWindowHandleDegeri="";
         for (String each: windowHandleseti
         ) {
