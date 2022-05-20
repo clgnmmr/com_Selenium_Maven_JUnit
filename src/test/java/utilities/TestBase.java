@@ -21,7 +21,8 @@ public abstract class TestBase {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() throws InterruptedException {
+
         driver.quit();
     }
 }
