@@ -14,7 +14,7 @@ public class C01_MavenIlkClass {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofDays(15));
 
-        driver.get("https://www.amazon.com");
+        driver.get("https://www.lcwaikiki.com/tr-TR/TR");
 
     }
 }

@@ -16,7 +16,7 @@ public class C03_MouseActions1 extends TestBase {
     @Test
     public void test01(){
         //2- https://the-internet.herokuapp.com/context_menu sitesine gidelim
-        driver.get("https://the-internet.herokuapp.com/context_menu");
+        driver.get("https://www.lcwaikiki.com/tr-TR/TR");
         String ilkSayfaWindowHandleDegeri= driver.getWindowHandle();
         //3- Cizili alan uzerinde sag click yapalim
         WebElement ciziliAlan=driver.findElement(By.id("hot-spot"));
@@ -50,6 +50,25 @@ public class C03_MouseActions1 extends TestBase {
         Assert.assertEquals(expectedTitle, actualTitle);
 
 
+    }
+
+    @Test
+    public void test02(){
+
+        //- https://www.lcwaikiki.com/tr-TR/TR sitesi açılır.
+        driver.get("https://www.lcwaikiki.com/tr-TR/TR");
+        //- Ana sayfanın açıldığı kontrol edilir. Siteye login olunur
+        WebElement anasayfaBaslık=driver.findElement(By.xpath("//a[@class='main-header-logo']"));
+        Assert.assertTrue(anasayfaBaslık.isDisplayed());
+        //- Login işlemi kontrol edilir.
+        //- Arama kutucuğuna “pantolan” kelimesi girilir.
+        //- Sayfanın sonuna scroll edilir.
+        //- “Daha fazla ürün gör “ butonuna tıklanır.
+        //- Sonuca göre sergilenen ürünlerden rastgele bir ürün seçilir.
+        //- Seçilen ürün sepete eklenir.
+        //- Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatının doğruluğu karşılaştırılır.
+        //- Adet arttırılarak ürün adedinin 2 olduğu doğrulanır.
+        //- Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
     }
 
 }

@@ -25,7 +25,7 @@ public class C05_FileUpload extends TestBase {
         // 2.adim yuklenecek doyanin dosya yolunu olusturalim
         //   biz masaustundeki text.txt dosyasini yukleyelim
         String farkliKisim=System.getProperty("user.home");
-        String ortakKisim= "\\Downloads\\dummy.txt";
+        String ortakKisim= "\\Downloads\\Proje Takvimi.png";
         String yuklenecekDosya= farkliKisim+ortakKisim;
         //C:\Users\Lenovo\Downloads\dummy.txt
         // 3. adim sendKeys ile dosya yolunu, secme butonuna yollayalim
